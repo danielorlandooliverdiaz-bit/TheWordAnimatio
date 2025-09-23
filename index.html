@@ -1,0 +1,290 @@
+<!-- Chosen Palette: Abismo y Oro Imperial -->
+<!-- Application Structure Plan: He diseñado una aplicación de una sola página (SPA) con una barra de navegación superior fija que permite el desplazamiento suave a las diferentes secciones: Inicio, Producciones, Contacto y Registro. Esta estructura reemplaza la navegación entre múltiples páginas, creando una experiencia más fluida y moderna. La sección clave es "Producciones", que ahora es interactiva. Elegí este enfoque porque permite a los usuarios ver toda la oferta del estudio de un vistazo y profundizar en la información sin tiempos de carga, mejorando la usabilidad y el engagement. -->
+<!-- Visualization & Content Choices: 
+- Report Info: Catálogo de producciones. -> Goal: Organizar y Comparar. -> Viz/Presentation: Tarjetas (Cards) con filtros interactivos en lugar de una tabla estática. -> Interaction: Botones que filtran las producciones por estado (Estrenada, En Producción, etc.) usando JavaScript para mostrar u ocultar las tarjetas correspondientes. -> Justification: Las tarjetas son más visuales y los filtros permiten al usuario explorar el catálogo de forma activa. -> Library/Method: HTML/Tailwind + Vanilla JS.
+- Report Info: Resumen del estado de los proyectos. -> Goal: Informar. -> Viz/Presentation: Gráfico de Donut. -> Interaction: El gráfico muestra la distribución porcentual de los proyectos según su estado. Un tooltip aparece al pasar el ratón. -> Justification: Ofrece una síntesis visual e inmediata del pipeline de producción del estudio, algo que una tabla no puede comunicar tan eficazmente. -> Library/Method: Chart.js (Canvas).
+- Report Info: Formularios de contacto y registro. -> Goal: Recopilar datos. -> Viz/Presentation: Formularios HTML estilizados. -> Interaction: Estándar de formulario. -> Justification: Es el método más directo y universal para esta tarea. -> Library/Method: HTML/Tailwind. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheWordAnimatio - SPA Interactiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+    </style>
+</head>
+<body class="bg-[#FDFEFE] text-[#212529]">
+
+    <!-- Header & Navigation -->
+    <header class="bg-[#1B2631] text-white sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#inicio" class="text-2xl font-cinzel">TheWordAnimatio</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#inicio" class="hover:text-[#D4AC0D] transition-colors">Inicio</a>
+                <a href="#producciones" class="hover:text-[#D4AC0D] transition-colors">Producciones</a>
+                <a href="#contacto" class="hover:text-[#D4AC0D] transition-colors">Contacto</a>
+                <a href="#registro" class="hover:text-[#D4AC0D] transition-colors">Registro</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#inicio" class="block py-2 px-6 text-sm hover:bg-[#2c3e50]">Inicio</a>
+            <a href="#producciones" class="block py-2 px-6 text-sm hover:bg-[#2c3e50]">Producciones</a>
+            <a href="#contacto" class="block py-2 px-6 text-sm hover:bg-[#2c3e50]">Contacto</a>
+            <a href="#registro" class="block py-2 px-6 text-sm hover:bg-[#2c3e50]">Registro</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section: Inicio -->
+        <section id="inicio" class="relative h-screen flex items-center justify-center text-white text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(27, 38, 49, 0.7), rgba(27, 38, 49, 0.7)), url('https://placehold.co/1920x1080/1B2631/D4AC0D?text=Arte+Épico+Digital');">
+            <div class="px-4">
+                <h1 class="text-5xl md:text-7xl font-bold font-cinzel">Narrando lo Eterno con Arte Moderno</h1>
+                <p class="text-lg md:text-xl mt-4 max-w-3xl mx-auto">Damos vida a las historias más trascendentales de la humanidad a través de la animación de vanguardia.</p>
+                <a href="#producciones" class="mt-8 inline-block bg-[#D4AC0D] text-[#1B2631] font-bold py-3 px-8 rounded-lg text-lg hover:bg-[#b9950b] transition-transform hover:scale-105">
+                    Explorar Producciones
+                </a>
+            </div>
+        </section>
+
+        <!-- Section: Producciones -->
+        <section id="producciones" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold font-cinzel text-[#1B2631]">Nuestro Catálogo de Contenido</h2>
+                    <p class="text-lg text-gray-600 mt-2">Un universo de historias que han moldeado el mundo.</p>
+                </div>
+                
+                <div class="flex justify-center space-x-2 md:space-x-4 mb-8" id="filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="estrenada">Estrenada</button>
+                    <button class="filter-btn" data-filter="produccion">En Producción</button>
+                    <button class="filter-btn" data-filter="desarrollo">En Desarrollo</button>
+                </div>
+
+                <div id="productions-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Cards will be injected here by JS -->
+                </div>
+
+                <div class="mt-20">
+                    <h3 class="text-3xl font-bold font-cinzel text-center text-[#1B2631] mb-8">Estado de Producciones</h3>
+                    <div class="chart-container relative h-96 max-w-lg mx-auto">
+                        <canvas id="productionsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Contacto -->
+        <section id="contacto" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold font-cinzel text-[#1B2631]">Contáctanos</h2>
+                    <p class="text-lg text-gray-600 mt-2">¿Tienes preguntas, sugerencias o propuestas? Nos encantaría escucharte.</p>
+                </div>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                            <input type="text" placeholder="Tu Nombre" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AC0D]">
+                            <input type="email" placeholder="Correo Electrónico" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AC0D]">
+                        </div>
+                        <input type="text" placeholder="Asunto" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-[#D4AC0D]">
+                        <textarea placeholder="Tu Mensaje" rows="5" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-[#D4AC0D]"></textarea>
+                        <button type="submit" class="w-full bg-[#D4AC0D] text-[#1B2631] font-bold py-3 px-6 rounded-lg hover:bg-[#b9950b] transition-transform hover:scale-105">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Registro -->
+        <section id="registro" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-lg mx-auto text-center">
+                    <h2 class="text-4xl font-bold font-cinzel text-[#1B2631]">Crea tu Cuenta</h2>
+                    <p class="text-lg text-gray-600 mt-2 mb-8">Guarda tu progreso en nuestras series y recibe noticias exclusivas.</p>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <form>
+                            <input type="text" placeholder="Nombre de Usuario" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-[#D4AC0D]">
+                            <input type="email" placeholder="Correo Electrónico" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-[#D4AC0D]">
+                            <input type="password" placeholder="Crear Contraseña" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-[#D4AC0D]">
+                            <button type="submit" class="w-full bg-[#D4AC0D] text-[#1B2631] font-bold py-3 px-6 rounded-lg hover:bg-[#b9950b] transition-transform hover:scale-105">Crear Cuenta</button>
+                            <p class="text-sm text-gray-500 mt-4">¿Ya tienes una cuenta? <a href="#" class="text-[#D4AC0D] font-bold">Inicia Sesión</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#1B2631] text-white text-center py-6">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 TheWordAnimatio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <style>
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            color: #4A5568;
+            background-color: #E2E8F0;
+            transition: all 0.3s ease;
+        }
+        .filter-btn:hover {
+            background-color: #CBD5E0;
+        }
+        .filter-btn.active {
+            background-color: #1B2631;
+            color: white;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu on link click
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Production Data
+            const productions = [
+                { title: 'Génesis: El Origen', format: 'Serie de TV', status: 'Estrenada', status_key: 'estrenada', description: 'La historia de la creación, Adán y Eva, Caín y Abel, y el diluvio universal.', image: 'https://placehold.co/600x400/273746/FDFEFE?text=Génesis' },
+                { title: 'Éxodo: La Liberación', format: 'Largometraje', status: 'Estrenada', status_key: 'estrenada', description: 'La épica vida de Moisés y la liberación del pueblo de Israel de la esclavitud.', image: 'https://placehold.co/600x400/512E5F/FDFEFE?text=Éxodo' },
+                { title: 'Crónicas de David', format: 'Serie de TV', status: 'En Producción', status_key: 'produccion', description: 'Desde pastor a rey, la historia de David, su fe, sus batallas y su legado.', image: 'https://placehold.co/600x400/4A235A/FDFEFE?text=David' },
+                { title: 'El Libro de Rut', format: 'Cortometraje', status: 'En Pre-Producción', status_key: 'desarrollo', description: 'Una conmovedora historia de lealtad, fe y redención en tiempos de adversidad.', image: 'https://placehold.co/600x400/145A32/FDFEFE?text=Rut' },
+                { title: 'Hechos de los Apóstoles', format: 'Serie de TV', status: 'En Desarrollo', status_key: 'desarrollo', description: 'El nacimiento de la iglesia primitiva y los viajes misioneros de los apóstoles.', image: 'https://placehold.co/600x400/0E6251/FDFEFE?text=Hechos' }
+            ];
+
+            const productionsGrid = document.getElementById('productions-grid');
+            const filtersContainer = document.getElementById('filters');
+            
+            const statusColors = {
+                'Estrenada': 'bg-green-500',
+                'En Producción': 'bg-yellow-500',
+                'En Pre-Producción': 'bg-blue-500',
+                'En Desarrollo': 'bg-gray-500'
+            };
+
+            // Function to render productions
+            function renderProductions(filter = 'all') {
+                productionsGrid.innerHTML = '';
+                const filteredProductions = (filter === 'all') ? productions : productions.filter(p => p.status_key === filter);
+                
+                filteredProductions.forEach(p => {
+                    const card = document.createElement('div');
+                    card.className = `production-card bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105`;
+                    card.innerHTML = `
+                        <img src="${p.image}" alt="Imagen de ${p.title}" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold font-cinzel text-[#1B2631] mb-2">${p.title}</h3>
+                                <span class="text-xs font-bold uppercase px-2 py-1 rounded-full text-white ${statusColors[p.status]}">${p.status}</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-4">${p.format}</p>
+                            <p class="text-gray-700">${p.description}</p>
+                        </div>
+                    `;
+                    productionsGrid.appendChild(card);
+                });
+            }
+
+            // Filter logic
+            filtersContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('filter-btn')) {
+                    document.querySelector('.filter-btn.active').classList.remove('active');
+                    e.target.classList.add('active');
+                    renderProductions(e.target.dataset.filter);
+                }
+            });
+
+            // Initial render
+            renderProductions();
+
+            // Chart.js implementation
+            const statusCounts = productions.reduce((acc, p) => {
+                const key = (p.status === 'En Pre-Producción' || p.status === 'En Desarrollo') ? 'En Desarrollo' : p.status;
+                 acc[key] = (acc[key] || 0) + 1;
+                 return acc;
+            }, {});
+            
+            const ctx = document.getElementById('productionsChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(statusCounts),
+                    datasets: [{
+                        label: 'Número de Producciones',
+                        data: Object.values(statusCounts),
+                        backgroundColor: [
+                            '#27AE60', // Estrenada
+                            '#F1C40F', // En Producción
+                            '#85929E', // En Desarrollo
+                        ],
+                        borderColor: '#FDFEFE',
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    family: "'Lato', sans-serif",
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed === 1 ? '1 producción' : `${context.parsed} producciones`;
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
