@@ -1,0 +1,22 @@
+/* Custom Styles */
+
+.hero {
+    background: linear-gradient(rgba(27, 38, 49, 0.7), rgba(27, 38, 49, 0.7)), url('https://placehold.co/1920x1080/1B2631/D4AC0D?text=Arte+Épico+Digital');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+}
+
+.btn-primary {
+    background-color: #D4AC0D;
+    border-color: #D4AC0D;
+}
+
+.btn-primary:hover {
+    background-color: #b9950b;
+    border-color: #b9950b;
+}
+
+.navbar-brand {
+    font-family: 'Cinzel', serif;
+}
