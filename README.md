@@ -1,20 +1,20 @@
-# Proyecto: Arte Épico Digital
+# Proyecto: TheWordAnimatio
 
-Este proyecto es un sitio web responsivo dedicado a la exhibición de arte digital con una temática épica. El objetivo es proporcionar una plataforma para que los artistas muestren su trabajo y para que los entusiastas del arte descubran nuevas piezas.
+Este proyecto es el sitio web oficial de TheWordAnimatio, un estudio de animación dedicado a producir series y largometrajes basados en las historias más importantes de la humanidad. El objetivo es llevar estas narrativas a una nueva generación a través de la belleza y el poder de la animación moderna.
 
 ## Páginas del Sitio
 
 El sitio se compone de las siguientes secciones:
 
-- **Página Principal (`index.html`):** La página de bienvenida que presenta una introducción visual al mundo del arte épico digital.
-- **Página de Series/Eventos (`series.html`):** Muestra una colección de series de arte o eventos, organizados en un formato de tabla para una fácil visualización.
+- **Página Principal (`index.html`):** La página de bienvenida que presenta la misión del estudio y una introducción visual a su trabajo.
+- **Página de Series (`series.html`):** Muestra información sobre las series de animación producidas por el estudio.
 - **Página de Contacto (`contact.html`):** Un formulario para que los visitantes puedan enviar consultas o comentarios.
-- **Página de Registro (`register.html`):** Permite a los usuarios crear una cuenta para obtener acceso a funciones adicionales.
+- **Página de Registro (`register.html`):** Permite a los usuarios crear una cuenta para obtener acceso a contenido exclusivo o funciones adicionales.
 
 ## Tecnologías Utilizadas
 
 - **HTML5:** Para la estructura semántica del contenido.
-- **CSS3:** Para el diseño y la presentación visual.
+- **CSS3:** Para el diseño y la presentación visual, incluyendo el uso de Bootstrap.
 - **JavaScript:** Para la interactividad y la funcionalidad dinámica.
 
 ## Guía de Estilos
