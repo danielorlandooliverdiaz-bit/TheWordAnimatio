@@ -4,12 +4,4 @@
   packages = [
     pkgs.python3
   ];
-
-  # Let Project IDX know you're running a web server.
-  previews = [{
-      # A simple Python server that serves the current directory.
-      command = [ "python3" "-m" "http.server" "$PORT" ];
-      manager = "web";
-      enable = true;
-  }];
 }
