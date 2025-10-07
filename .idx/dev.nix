@@ -6,12 +6,10 @@
   ];
 
   # Let Project IDX know you're running a web server.
-  previews = {
-    enable = true;
-    previews = [{
+  previews = [{
       # A simple Python server that serves the current directory.
       command = [ "python3" "-m" "http.server" "$PORT" ];
       manager = "web";
-    }];
-  };
+      enable = true;
+  }];
 }
