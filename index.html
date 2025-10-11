@@ -12,23 +12,23 @@
     <!-- Header & Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">TheWordAnimatio</a>
+            <a class="navbar-brand" href="#inicio">TheWordAnimatio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="series.html">Producciones</a>
+                        <a class="nav-link" href="#producciones">Producciones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contacto</a>
+                        <a class="nav-link" href="#contacto">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="register.html">Registro</a>
+                        <a class="nav-link" href="#registro">Registro</a>
                     </li>
                 </ul>
             </div>
@@ -36,123 +36,45 @@
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero text-white text-center d-flex align-items-center justify-content-center">
-            <div class="container">
-                <h1 class="display-3">Narrando lo Eterno con Arte Moderno</h1>
-                <p class="lead">Damos vida a las historias más trascendentales de la humanidad a través de la animación de vanguardia.</p>
-                <a href="series.html" class="btn btn-primary btn-lg">Explorar Producciones</a>
+        <!-- SECTIONS -->
+        <section id="inicio" class="content-section">
+            <!-- Hero Section -->
+            <div class="hero text-white text-center d-flex align-items-center justify-content-center">
+                <div class="container">
+                    <h1 class="display-3">Narrando lo Eterno con Arte Moderno</h1>
+                    <p class="lead">Damos vida a las historias más trascendentales de la humanidad a través de la animación de vanguardia.</p>
+                    <a href="#producciones" class="btn btn-primary btn-lg">Explorar Producciones</a>
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <div class="py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto text-center">
+                            <h2>Sobre Nosotros</h2>
+                            <p class="lead">TheWordAnimatio es un estudio de animación dedicado a producir series y largometrajes basados en las historias más importantes de la humanidad. Nuestro objetivo es llevar estas narrativas a una nueva generación a través de la belleza y el poder de la animación moderna.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section class="py-5">
-            <div class="container">
+        <section id="producciones" class="content-section" style="display:none;">
+            <div class="container py-5">
+                <div class="text-center mb-5">
+                    <h2>Nuestro Catálogo de Contenido</h2>
+                    <p class="lead">Un universo de historias que han moldeado el mundo.</p>
+                </div>
+
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center">
-                        <h2>Sobre Nosotros</h2>
-                        <p class="lead">TheWordAnimatio es un estudio de animación dedicado a producir series y largometrajes basados en las historias más importantes de la humanidad. Nuestro objetivo es llevar estas narrativas a una nueva generación a través de la belleza y el poder de la animación moderna.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <main class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="text-center mb-5">
-                        <h2>Contáctanos</h2>
-                        <p class="lead">¿Tienes preguntas, sugerencias o propuestas? Nos encantaría escucharte.</p>
-                    </div>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label for="name" class="form-label">Tu Nombre</label>
-                                <input type="text" class="form-control" id="name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="subject" class="form-label">Asunto</label>
-                                <input type="text" class="form-control" id="subject" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="message" class="form-label">Tu Mensaje</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
-                            </div>
-                            <div class="col-12 text-center">
-                                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </main>
-    <main class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mx-auto">
-                    <div class="text-center mb-5">
-                        <h2>Crea tu Cuenta</h2>
-                        <p class="lead">Guarda tu progreso en nuestras series y recibe noticias exclusivas.</p>
-                    </div>
-                    <form>
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Nombre de Usuario</label>
-                            <input type="text" class="form-control" id="username" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Crear Contraseña</label>
-                            <input type="password" class="form-control" id="password" required>
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Crear Cuenta</button>
-                        </div>
-                        <p class="text-center mt-3">¿Ya tienes una cuenta? <a href="#">Inicia Sesión</a></p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </main>
-    <main class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2>Nuestro Catálogo de Contenido</h2>
-                <p class="lead">Un universo de historias que han moldeado el mundo.</p>
-            </div>
-
-            <div class="row">
-            <!-- Production Card -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100">
-                    <img src="https://placehold.co/600x400/1B2631/D4AC0D?text=Mateo" class="card-img-top" alt="Mateo">
-                    <div class="card-body">
-                        <h5 class="card-title">Mateo</h5>
-                        <p class="card-text">La vida, enseñanzas, muerte y resurrección de Jesús, narrada desde la perspectiva del apóstol Mateo. Una serie que explora el cumplimiento de las profecías y el establecimiento del Reino de los Cielos.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Estado: En Producción</small>
-                    </div>
-                </div>
-            </div>
-
-
-
                 <!-- Production Card -->
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card h-100">
-                        <img src="https://placehold.co/600x400/1B2631/D4AC0D?text=Genesis" class="card-img-top" alt="Genesis">
+                        <img src="https://placehold.co/600x400/1B2631/D4AC0D?text=Mateo" class="card-img-top" alt="Mateo">
                         <div class="card-body">
-                            <h5 class="card-title">Génesis</h5>
-                            <p class="card-text">La historia de la creación, la caída del hombre y la promesa de redención. Una serie épica que explora los orígenes de la humanidad.</p>
+                            <h5 class="card-title">Mateo</h5>
+                            <p class="card-text">La vida, enseñanzas, muerte y resurrección de Jesús, narrada desde la perspectiva del apóstol Mateo. Una serie que explora el cumplimiento de las profecías y el establecimiento del Reino de los Cielos.</p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">Estado: En Producción</small>
@@ -160,63 +82,148 @@
                     </div>
                 </div>
 
-                <!-- Production Card -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/600x400/1B2631/D4AC0D?text=Éxodo" class="card-img-top" alt="Éxodo">
-                        <div class="card-body">
-                            <h5 class="card-title">Éxodo</h5>
-                            <p class="card-text">La liberación de un pueblo, la entrega de la ley y la forja de una nación. Una historia de fe, milagros y liderazgo.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Estado: Estrenada</small>
+
+
+                    <!-- Production Card -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <img src="https://placehold.co/600x400/1B2631/D4AC0D?text=Genesis" class="card-img-top" alt="Genesis">
+                            <div class="card-body">
+                                <h5 class="card-title">Génesis</h5>
+                                <p class="card-text">La historia de la creación, la caída del hombre y la promesa de redención. Una serie épica que explora los orígenes de la humanidad.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Estado: En Producción</small>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Production Card -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/600x400/1B2631/D4AC0D?text=Juan" class="card-img-top" alt="Juan">
-                        <div class="card-body">
-                            <h5 class="card-title">Juan</h5>
-                            <p class="card-text">La vida y ministerio de Jesús desde una perspectiva teológica profunda. Enfocado en el amor, la deidad de Cristo y la vida eterna.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Estado: Pre-Producción</small>
+                    <!-- Production Card -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <img src="https://placehold.co/600x400/1B2631/D4AC0D?text=Éxodo" class="card-img-top" alt="Éxodo">
+                            <div class="card-body">
+                                <h5 class="card-title">Éxodo</h5>
+                                <p class="card-text">La liberación de un pueblo, la entrega de la ley y la forja de una nación. Una historia de fe, milagros y liderazgo.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Estado: Estrenada</small>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Production Card -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/600x400/1B2631/D4AC0D?text=Hechos" class="card-img-top" alt="Hechos">
-                        <div class="card-body">
-                            <h5 class="card-title">Hechos de los Apóstoles</h5>
-                            <p class="card-text">La historia del nacimiento y la expansión de la iglesia primitiva, el poder del Espíritu Santo y los viajes misioneros de los apóstoles.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Estado: En Guion</small>
+                    <!-- Production Card -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <img src="https://placehold.co/600x400/1B2631/D4AC0D?text=Juan" class="card-img-top" alt="Juan">
+                            <div class="card-body">
+                                <h5 class="card-title">Juan</h5>
+                                <p class="card-text">La vida y ministerio de Jesús desde una perspectiva teológica profunda. Enfocado en el amor, la deidad de Cristo y la vida eterna.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Estado: Pre-Producción</small>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Production Card -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/600x400/1B2631/D4AC0D?text=Apocalipsis" class="card-img-top" alt="Apocalipsis">
-                        <div class="card-body">
-                            <h5 class="card-title">Apocalipsis</h5>
-                            <p class="card-text">La revelación del fin de los tiempos, la batalla final entre el bien y el mal, y la esperanza de un nuevo comienzo.</p>
+                    <!-- Production Card -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <img src="https://placehold.co/600x400/1B2631/D4AC0D?text=Hechos" class="card-img-top" alt="Hechos">
+                            <div class="card-body">
+                                <h5 class="card-title">Hechos de los Apóstoles</h5>
+                                <p class="card-text">La historia del nacimiento y la expansión de la iglesia primitiva, el poder del Espíritu Santo y los viajes misioneros de los apóstoles.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Estado: En Guion</small>
+                            </div>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Estado: En Desarrollo</small>
+                    </div>
+
+                    <!-- Production Card -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <img src="https://placehold.co/600x400/1B2631/D4AC0D?text=Apocalipsis" class="card-img-top" alt="Apocalipsis">
+                            <div class="card-body">
+                                <h5 class="card-title">Apocalipsis</h5>
+                                <p class="card-text">La revelación del fin de los tiempos, la batalla final entre el bien y el mal, y la esperanza de un nuevo comienzo.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Estado: En Desarrollo</small>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section id="contacto" class="content-section" style="display:none;">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="text-center mb-5">
+                            <h2>Contáctanos</h2>
+                            <p class="lead">¿Tienes preguntas, sugerencias o propuestas? Nos encantaría escucharte.</p>
+                        </div>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Tu Nombre</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="subject" class="form-label">Asunto</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Tu Mensaje</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="registro" class="content-section" style="display:none;">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-6 mx-auto">
+                        <div class="text-center mb-5">
+                            <h2>Crea tu Cuenta</h2>
+                            <p class="lead">Guarda tu progreso en nuestras series y recibe noticias exclusivas.</p>
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Nombre de Usuario</label>
+                                <input type="text" class="form-control" id="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Crear Contraseña</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Crear Cuenta</button>
+                            </div>
+                            <p class="text-center mt-3">¿Ya tienes una cuenta? <a href="#">Inicia Sesión</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
     </main>
 
     <!-- Footer -->
@@ -226,6 +233,7 @@
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
 </body>
