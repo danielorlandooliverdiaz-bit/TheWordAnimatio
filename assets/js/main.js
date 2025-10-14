@@ -27,21 +27,28 @@ $(document).ready(function() {
 
     // Validación del formulario de contacto y modal
     $('#contact-form').submit(function(e) {
-        e.preventDefault(); // Prevenir el envío real del formulario
-
+        e.preventDefault();
         var email = $('#contact-email').val();
         var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-
         if (emailRegex.test(email)) {
-            // Si el email es válido, mostrar el modal
             var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
             confirmationModal.show();
-
-            // Limpiar el formulario
             $(this)[0].reset();
         } else {
-            // Si el email no es válido, mostrar una alerta
             alert('Por favor, introduce una dirección de correo electrónico válida.');
         }
+    });
+
+    // Lógica de búsqueda de proyectos
+    $('#project-search').on('keyup', function() {
+        var searchTerm = $(this).val().toLowerCase();
+        $('#project-list .project-card').each(function() {
+            var projectTitle = $(this).find('.card-title').text().toLowerCase();
+            if (projectTitle.indexOf(searchTerm) > -1) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
     });
 });
