@@ -2,20 +2,38 @@
 
 Este proyecto es el sitio web oficial de TheWordAnimatio, un estudio de animación dedicado a producir series y largometrajes basados en las historias más importantes de la humanidad. El objetivo es llevar estas narrativas a una nueva generación a través de la belleza y el poder de la animación moderna.
 
-## Páginas del Sitio
+## Estructura del Sitio (SPA)
 
-El sitio se compone de las siguientes secciones:
+Este proyecto está construido como una **Aplicación de Página Única (Single Page Application - SPA)**. Todo el contenido reside en un único archivo `index.html` y la navegación se gestiona con JavaScript (jQuery) para mostrar y ocultar las diferentes secciones dinámicamente sin recargar la página.
 
-- **Página Principal (`index.html`):** La página de bienvenida que presenta la misión del estudio y una introducción visual a su trabajo.
-- **Página de Series (`series.html`):** Muestra información sobre las series de animación producidas por el estudio.
-- **Página de Contacto (`contact.html`):** Un formulario para que los visitantes puedan enviar consultas o comentarios.
-- **Página de Registro (`register.html`):** Permite a los usuarios crear una cuenta para obtener acceso a contenido exclusivo o funciones adicionales.
+Las secciones principales son:
+
+- **`#inicio`**: La página de bienvenida que presenta la misión del estudio.
+- **`#producciones`**: Muestra a modo de tarjetas los diferentes proyectos y series del estudio.
+- **`#contacto`**: Contiene un formulario para que los visitantes puedan enviar consultas.
+- **`#registro`**: Permite a los usuarios registrarse.
+
+## Entorno de Desarrollo
+
+Para visualizar el proyecto localmente y asegurar que todas las funcionalidades de JavaScript se ejecuten correctamente, es necesario servir los archivos a través de un servidor web local.
+
+1.  **Abre una terminal** en la raíz del proyecto.
+2.  **Ejecuta un servidor local.** La forma más sencilla es con Python:
+
+    ```bash
+    # Si usas Python 3
+    python -m http.server
+
+    # Si usas Python 2
+    python -m SimpleHTTPServer
+    ```
+3.  **Abre tu navegador** y visita `http://localhost:8000`.
 
 ## Tecnologías Utilizadas
 
 - **HTML5:** Para la estructura semántica del contenido.
 - **CSS3:** Para el diseño y la presentación visual, incluyendo el uso de Bootstrap.
-- **JavaScript:** Para la interactividad y la funcionalidad dinámica.
+- **JavaScript (jQuery):** Para la interactividad y la navegación dinámica de la SPA.
 
 ## Guía de Estilos
 
