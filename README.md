@@ -14,20 +14,7 @@ Las secciones principales son:
 - **`#registro`**: Permite a los usuarios registrarse.
 
 ## Entorno de Desarrollo
-
-Para visualizar el proyecto localmente y asegurar que todas las funcionalidades de JavaScript se ejecuten correctamente, es necesario servir los archivos a través de un servidor web local.
-
-1.  **Abre una terminal** en la raíz del proyecto.
-2.  **Ejecuta un servidor local.** La forma más sencilla es con Python:
-
-    ```bash
-    # Si usas Python 3
-    python -m http.server
-
-    # Si usas Python 2
-    python -m SimpleHTTPServer
-    ```
-3.  **Abre tu navegador** y visita `http://localhost:8000`.
+- Github / VSCode
 
 ## Tecnologías Utilizadas
 
