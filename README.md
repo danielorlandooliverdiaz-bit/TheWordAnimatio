@@ -14,7 +14,7 @@ Las secciones principales son:
 - **`#registro`**: Permite a los usuarios registrarse.
 
 ## Entorno de Desarrollo
-- Github / VSCode
+- Github / VSCode-IDX
 
 ## Tecnologías Utilizadas
 
