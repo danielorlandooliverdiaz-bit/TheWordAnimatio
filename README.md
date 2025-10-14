@@ -48,7 +48,7 @@ A continuación se detallan los elementos de diseño clave utilizados en el proy
 
 La paleta de colores está diseñada para evocar una sensación de epicidad y elegancia.
 
-- **Primario (Acentos):** `#D4AC0D` ![#D4AC0D](https://via.placeholder.com/15/D4AC0D/000000?text=+) (un dorado/amarillo oscuro)
+- **Primario (Acentos):** `#D4AC0D` ![#D4AC0D](https://placehold.co/100x100/#D4AC0D/#D4AC0D.png) (un dorado/amarillo oscuro)
 - **Primario Hover:** `#b9950b` ![#b9950b](https://via.placeholder.com/15/b9950b/000000?text=+) (un dorado ligeramente más oscuro para interacciones)
 - **Fondo Oscuro (Héroe):** `#1B2631` ![#1B2631](https://via.placeholder.com/15/1B2631/000000?text=+) (un azul oscuro y profundo)
 - **Superposición de Fondo:** `rgba(27, 38, 49, 0.7)` (una versión semitransparente del fondo oscuro para superponer sobre imágenes)
