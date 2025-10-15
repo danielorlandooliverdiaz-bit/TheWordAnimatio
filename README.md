@@ -47,3 +47,4 @@ La paleta de colores está diseñada para evocar una sensación de epicidad y el
     - Utiliza una imagen de fondo a tamaño completo (`background-size: cover`) con una superposición de gradiente lineal para garantizar la legibilidad del texto.
 - **Botones (`.btn-primary`):**
     - Tienen un color de fondo y borde definidos por el color primario (`#D4AC0D`).
+
