@@ -35,10 +35,10 @@ A continuación se detallan los elementos de diseño clave utilizados en el proy
 
 La paleta de colores está diseñada para evocar una sensación de epicidad y elegancia.
 
-- **Primario (Acentos):** `#D4AC0D` ![#D4AC0D](https://placehold.co/100x100/#D4AC0D/#D4AC0D.png) (un dorado/amarillo oscuro)
-- **Primario Hover:** `#b9950b` ![#b9950b](https://via.placeholder.com/15/b9950b/000000?text=+) (un dorado ligeramente más oscuro para interacciones)
-- **Fondo Oscuro (Héroe):** `#1B2631` ![#1B2631](https://via.placeholder.com/15/1B2631/000000?text=+) (un azul oscuro y profundo)
-- **Superposición de Fondo:** `rgba(27, 38, 49, 0.7)` (una versión semitransparente del fondo oscuro para superponer sobre imágenes)
+- **Primario (Acentos):** `#D4AC0D` ![#D4AC0D](data:image/svg+xml;utf8,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22%23D4AC0D%22%2F%3E%3C%2Fsvg%3E) (un dorado/amarillo oscuro)
+- **Primario Hover:** `#b9950b` ![#b9950b](data:image/svg+xml;utf8,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22%23b9950b%22%2F%3E%3C%2Fsvg%3E) (un dorado ligeramente más oscuro para interacciones)
+- **Fondo Oscuro (Héroe):** `#1B2631` ![#1B2631](data:image/svg+xml;utf8,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22%231B2631%22%2F%3E%3C%2Fsvg%3E) (un azul oscuro y profundo)
+- **Superposición de Fondo:** `rgba(27, 38, 49, 0.7)` ![#1B2631](data:image/svg+xml;utf8,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22%231B2631%22%2F%3E%3C%2Fsvg%3E) (una versión semitransparente del fondo oscuro para superponer sobre imágenes)
 
 ### Medidas y Estilos Clave
 
